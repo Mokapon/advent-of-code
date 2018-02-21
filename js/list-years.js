@@ -1,10 +1,9 @@
 let firstYear = 2015;
-let lastYear = new Date().getMonth() == 11? new Date().getFullYear() : new Date().getFullYear()-1;
+let lastYear = new Date().getMonth() === 11? new Date().getFullYear() : new Date().getFullYear()-1;
 
 function createList() {
     let div = document.getElementById('content-years');
     if (!div) {
-        console.log('hhhh');
         return;
     }
     for (let i = lastYear; i >= firstYear; i--) {

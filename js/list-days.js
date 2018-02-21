@@ -2,7 +2,12 @@ function fillList(year, basePath) {
     if (!basePath) {
         basePath = '';
     }
-    let ul = document.getElementById('days-list-' + year);
+    let ulId = 'days-list';
+    if (year) {
+        ulId += '-' + year;
+    }
+
+    let ul = document.getElementById(ulId);
     for (let day = 1; day <= 25; day++) {
         createLi(day, ul, basePath);
     }
@@ -11,10 +16,12 @@ function fillList(year, basePath) {
 function createLi(day, parent, basePath) {
     let li = document.createElement('li');
 
+    li.style.display = 'none';
     li.innerHTML = '<a href="' + basePath + 'day/' + day + '/index.html">Day ' + day + '</a>: ';
     $.getJSON(basePath + 'day/' + day + '/metadata.json', function(data) {
         li.innerHTML += '<strong>' + data.title + '</strong>';
         li.innerHTML += ' [<em>' + getTags(data.tags) + '</em>]';
+        li.style.display = 'block';
     }).fail(function(){
         parent.removeChild(li);
         if (!parent.innerHTML || parent.innerHTML === '') {
