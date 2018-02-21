@@ -1,0 +1,42 @@
+#content {
+  min-height: 92vh;
+  padding: 1rem;
+}
+
+#aoc-header {
+  padding: 2rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.font-aoc {
+  font-family: "Source Code Pro", monospace;
+}
+
+h3.font-aoc {
+  font-size: 1.65rem;
+}
+
+.font-aoc a {
+  color: #007bff;
+}
+
+.font-aoc a:hover {
+  color: #00beff;
+  text-shadow: 0 0 5px #00beff, 0 0 10px 
+}
+
+.aoc-title {
+  font-weight: lighter;
+}
+
+footer {
+  min-height: 8vh;
+  padding: 0.5em;
+}
+
+#footer-content {
+  background-color: #e9ecef;
+  font-weight: lighter;
+  border-radius: .3rem;
+  padding: 0.5rem;
+}
