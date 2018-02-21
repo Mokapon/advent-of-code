@@ -1,0 +1,4 @@
+1 SG SM PG PM
+2 TG RG RM CG CM
+3 TM
+4

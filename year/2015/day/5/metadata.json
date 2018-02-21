@@ -1,0 +1,7 @@
+{
+    "year": 2015,
+    "day": 5,
+    "title": "Naughty or Nice?",
+    "instructions":"Change the puzzle with the buttons in the top right.",
+    "tags": ["data-validation", "regexp"]
+}

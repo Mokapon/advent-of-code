@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Advent of Code 2016</title>
+  <link rel="shortcut icon" type="image/png" href="../../img/favicon.png">
+
+  <!-- style -->
+  <link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../css/aoc.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container-fluid bg-light" id="content">
+    <div class="jumbotron" id="aoc-header">
+      <div class="row">
+        <h2 class="col-8 aoc-title">
+          Advent of Code 2016
+        </h2>
+        <h3 class="col-4 font-aoc">
+          <a href="https://adventofcode.com/2016" target="_blank">[Go to calendar]</a>
+        </h3>
+        <h2 class="col-8">
+          Solutions developed using p5.js
+        </h2>
+        <h3 class="col-4 font-aoc">
+          <a href="https://p5js.org/" target="_blank">[Go to p5js.org]</a>
+        </h3>
+      </div>
+    </div>
+    <!-- List of the solutions -->
+    <div class="container-fluid">
+      <ul id="days-list-2016">
+      </ul>
+    </div>
+  </div>
+  
+  <!-- bootstrap js -->
+  <script src="../../lib/jquery-3.3.1.min.js"></script>
+  <script src="../../bootstrap/js/bootstrap.min.js"></script>
+
+  <!-- Load metaData on the solutions -->
+  <script type="text/javascript" src="../../js/list-days.js" onLoad="fillList(2016)"></script>
+
+</body>
+</html>

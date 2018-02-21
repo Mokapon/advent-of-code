@@ -1,0 +1,9 @@
+tgl a
+dec a
+tgl a
+dec a
+inc a
+out a
+inc a
+out a
+jnz 1 -4
