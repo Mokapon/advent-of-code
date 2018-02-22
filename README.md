@@ -1,4 +1,4 @@
-# advent-of-code
+# Advent of Code
 Graphical solutions to the [Advent of Code](https://adventofcode.com) puzzles using [p5.js](https://p5js.org).
 
 ## The project
@@ -15,3 +15,5 @@ Graphical solutions to the [Advent of Code](https://adventofcode.com) puzzles us
 * I deleted my code for 2016, day 14 by accident... ;0; Maybe I'll redo it, but it's not interesting graphically, and pretty similar to [this 2015 puzzle](https://mokapon.github.io/advent-of-code/year/2015/day/4/index.html).
 * Yes I could try to display Regexp matches interstingly for some of these puzzles. I'm thinking about it.
 
+## Template
+* Fill free to use and modify the template I created. Please link to this page when you do. You can find a clean template [right here](./year/20XX).
