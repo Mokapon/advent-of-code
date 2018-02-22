@@ -2,6 +2,16 @@
     "year": 2015,
     "day": 6,
     "title": "Christmas Lights Contest",
-    "instructions":"Change the puzzle with the buttons in the top right.",
-    "tags": ["grid", "instructions"]
+    "tags": ["grid", "pixels", "instructions"],
+    "instructions": {
+        "Instructions": [
+            "Switch input with the buttons in the top right."
+        ],
+        "Display": [
+            "Since the grid is so big, work with the pixels array. Only the first iteration is long to display."
+        ]
+    },
+    "solved": [1,2],
+    "visuals": 1,
+    "note": "A short lag will probably happen when first displaying a puzzle."
 }

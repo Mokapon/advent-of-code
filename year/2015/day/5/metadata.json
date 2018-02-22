@@ -2,6 +2,16 @@
     "year": 2015,
     "day": 5,
     "title": "Naughty or Nice?",
-    "instructions":"Change the puzzle with the buttons in the top right.",
-    "tags": ["data-validation", "regexp"]
+    "tags": ["data-validation", "regexp"],
+    "instructions": {
+        "Instructions": [
+            "Switch input with the buttons in the top right."
+        ],
+        "Algorithm": [
+            "Go through each input, checking against the regexps."
+        ]
+    },
+    "solved": [1,2],
+    "visuals": 0,
+    "note": "Could try to display the regexp matches."
 }

@@ -2,6 +2,21 @@
     "year": 2015,
     "day": 3,
     "title": "Presents Distribution",
-    "instructions":"<p>Switch puzzle with the buttons in the top right.</p><p>The result is displayed in the console once finished.</p><p>For Part 2, there are 2 santas moving around, but the camera stays focused on the first one at all times.</p>",
-    "tags": ["grid", "movement", "instructions"]
+    "tags": ["grid", "movement", "instructions"],
+    "instructions": {
+        "Instructions": [
+            "Switch input with the buttons in the top right.",
+            "The result is displayed in the console once finished."
+        ],
+        "Algorithm": [
+            "Apply each movement, ensuring that the grid is made bigger as needed."
+        ],
+        "Display": [
+            "Highlight the grid elements based on the number of presents delivered.",
+            "For Part 2, there are 2 santas moving around, but the camera stays focused on the first one at all times."
+        ]
+    },
+    "solved": [1,2],
+    "visuals": 1,
+    "note": "Could improve to try to keep both santas on camera."
 }

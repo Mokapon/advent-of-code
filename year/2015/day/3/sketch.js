@@ -119,32 +119,9 @@ function applyMove(move) {
     }
 
     // Check if we need to move the camera. Follow first santa
-    let averagePosition = createVector(0,0);
-    for (let santa of santas) {
-        averagePosition = p5.Vector.add(averagePosition, santa);
-    }
-    averagePosition = p5.Vector.div(averagePosition, santas.length);
-    if (abs(offset.x - averagePosition.x) < cols/2-2 || abs(offset.x - averagePosition.x + cols) <= cols/2-2 ||
-        abs(offset.y - averagePosition.y) < rows/2-2 || abs(offset.y - averagePosition.y + rows) <= rows/2-2) {
+    if (abs(offset.x + cols - santas[0].x) <= 2 || abs(offset.x - santas[0].x) < 2 ||
+        abs(offset.y + rows - santas[0].y) <= 2 || abs(offset.y - santas[0].y) < 2) {
         offset = p5.Vector.add(offset, direction);
-
-        if (direction.x > 0) {
-            // Add new col
-            addColumn(gridEnd.x);
-            gridEnd.x++;
-        } else if (direction.x < 0) {
-            // Add new col
-            gridStart.x--;
-            addColumn(gridStart.x);
-        } else if (direction.y > 0) {
-            // Add new row
-            addRow(gridEnd.y);
-            gridEnd.y++;
-        } else if (direction.y < 0) {
-            // Add new row
-            gridStart.y--;
-            addRow(gridStart.y);
-        }
     }
 }
 

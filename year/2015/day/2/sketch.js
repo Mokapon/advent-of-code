@@ -38,7 +38,7 @@ function draw() {
     background(240);
 
     textSize(13);
-    text('Area required: ' + totalArea + ' square feet', width/2, TOTAL_AREA_Y);
+    text('Wrapping Paper required: ' + totalArea + ' square feet', width/2, TOTAL_AREA_Y);
     text('Ribbon required: ' + totalRibbon + ' feet', width/2, TOTAL_RIBBON_Y);
 
     textSize(12);

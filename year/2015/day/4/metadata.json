@@ -2,6 +2,16 @@
     "year": 2015,
     "day": 4,
     "title": "Coins mining",
-    "instructions":"Change the puzzle with the button in the top right.",
-    "tags": ["data-manipulation", "hashing"]
+    "tags": ["data-manipulation", "hashing"],
+    "instructions": {
+        "Instructions": [
+            "Switch input with the buttons in the top right.",
+            "The result is displayed in the console once finished."
+        ],
+        "Algorithm": [
+            "Go through each hash until the regexp is matched. Not much here."
+        ]
+    },
+    "solved": [1,2],
+    "visuals": 0
 }

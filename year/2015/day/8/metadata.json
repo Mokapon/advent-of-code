@@ -2,6 +2,15 @@
     "year": 2015,
     "day": 8,
     "title": "Escaping Characters",
-    "instructions":"Change the puzzle with the buttons in the top right.",
-    "tags": ["data-analysis", "strings"]
+    "tags": ["data-analysis", "strings"],
+    "instructions": {
+        "Instructions": [
+            "Switch input with the buttons in the top right."
+        ],
+        "Algorithm": [
+            "Go through each string, applying the transformations. This is not necessary, we could simply have computed the resulting size."
+        ]
+    },
+    "solved": [1,2],
+    "visuals": 0
 }

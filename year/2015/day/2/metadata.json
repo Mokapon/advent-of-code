@@ -2,6 +2,15 @@
     "year": 2015,
     "day": 2,
     "title": "Wrapping Paper",
-    "instructions":"Switch input with the buttons in the top right.",
-    "tags": ["data-analysis", "numbers"]
+    "instructions": {
+        "Instructions": [
+            "Switch input with the buttons in the top right.",
+            "For part 1 we want to know the area of wrapping paper required. Part adds the length of ribbon."
+        ],
+        "Algorithm": ["Go through the boxes and update the total required values accordingly. To make commutations easier, the boxes measurements are sorted by ascending size."]
+    },
+    "tags": ["data-analysis", "numbers"],
+    "solved": [1,2],
+    "visuals": 0,
+    "note": "Could improve visuals by displaying the boxes"
 }

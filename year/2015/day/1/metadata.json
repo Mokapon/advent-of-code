@@ -2,6 +2,15 @@
     "year": 2015,
     "day": 1,
     "title": "Parentheses",
-    "instructions":"Switch input with the buttons in the top right.",
-    "tags": ["data-analysis", "strings"]
+    "instructions": {
+        "Instructions": [
+            "Switch input with the buttons in the top right.",
+            "For part 1 we just want to know the floor we end on. For part 2 we care about the first time we enter the basement."
+        ],
+        "Algorithm": ["Run through the characters and update the count accordingly."],
+        "Display": ["The color of the parentheses depends of the current count, so for example when the color goes back to red, it means we are back to the ground floor."]
+    },
+    "tags": ["data-analysis", "strings"],
+    "solved": [1,2],
+    "visuals": 1
 }

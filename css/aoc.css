@@ -52,3 +52,23 @@ footer {
   border-radius: .3rem;
   padding: 0.5rem;
 }
+
+#instructions-content div + div {
+  margin-top:1em;
+}
+
+#instructions-content p {
+  margin:0;
+}
+
+#instructions-content strong {
+  padding-left: 10px;
+}
+
+.fa-star {
+  color: #007bff;
+}
+
+.fa-heart {
+  color: #ed1998;
+}

@@ -2,6 +2,20 @@
     "year": 2015,
     "day": 7,
     "title": "Wires and Logic Gates",
-    "instructions":"Change the puzzle with the buttons in the top right.",
-    "tags": ["simulation", "logic-gates", "bitwise-operations"]
+    "tags": ["simulation", "logic-gates", "bitwise-operations"],
+    "instructions": {
+        "Instructions": [
+            "Switch input with the buttons in the top right."
+        ],
+        "Algorithm": [
+            "Load the puzzle recursively, ensuring the required inputs for each gate exists before creating it.",
+            "Because of this, applying the instructions can just be done in order of the gates."
+        ],
+        "Display": [
+            "The data initialization allows to display the gates and wires quite easily."
+        ]
+    },
+    "solved": [1,2],
+    "visuals": 1,
+    "note": "The resulting representation will be pretty wide and tall, but should not lag too much!"
 }
