@@ -2,5 +2,15 @@
     "year": 2016,
     "day": 6,
     "title": "Signals and Noise",
-    "tags": ["data-transmission", "string"]
+    "tags": ["data-transmission", "string"],
+    "instructions": {
+        "Instructions": [
+            "Use the buttons in the top right to switch the input."
+        ],
+        "Algorithm": [
+            "Each frame add the count of letter of a new word and update the deciphered code accordingly."
+        ]
+    },
+    "solved": [1,2],
+    "visuals": 0
 }

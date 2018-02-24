@@ -1,3 +1,4 @@
+const START_VALUE = 5;
 var input;
 
 var rows;
@@ -6,35 +7,37 @@ var cellWidth = 50;
 var cellHeight = 60;
 var gap = 5;
 
-var buttons = [];
-
+var buttons;
+var instructions
 var currentDigit;
 var currentInstruction;
 var fingerIndex;
-var code = '';
+var code;
 
 var finished = false;
 
 function preload() {
-  input = loadStrings('day2_input.txt');
+  input = [];
+  input[0] = loadStrings('input/day2_example.txt');
+  input[1] = loadStrings('input/day2_input.txt');
+  input[2] = input[1];
 }
 
 function setup() {
-  createCanvas(400, 400);
+  let canvas = createCanvas(400, 400);
+  canvas.parent('sketch');
+
   textAlign(CENTER);
 
-  // Create keyboard
-  setupKeyboard(2);
-
-  // Start with first digit
-  nextDigit();
+  loadPuzzle(0);
 }
 
 function draw() {
   if (finished) {
-    return;
+    noLoop();
+  } else {
+    update();  
   }
-  update();
 
   background(250);
   // Draw the buttons
@@ -44,28 +47,28 @@ function draw() {
     }
   }
   // Display the code
-  text(code, width / 2, height)
+  text(code, width / 2, height);
 }
 
-function nextDigit() {
-  // Start from button with value 5
-  for (var i = 0; i < buttons.length; i++) {
-    if (buttons[i] !== null && buttons[i].value === 5) {
-      fingerIndex = i;
-      break;
-    }
-  }
-
+function loadPuzzle(puzzle) {
+  instructions = input[puzzle];
+  code = '';
+  currentDigit = 0;
   currentInstruction = 0;
-  if (currentDigit !== undefined) {
-    currentDigit++;
-  } else {
-    currentDigit = 0;
+
+  // Create keyboard
+  setupKeyboard(puzzle);
+
+  if (finished) {
+    finished = false;
+    loop();
   }
 }
 
-function setupKeyboard(part) {
-  if (part === 1) {
+function setupKeyboard(puzzle) {
+  buttons = [];
+  if (puzzle <= 1) {
+    // Example and part 1: simple kayout
     rows = 3;
     columns = 3;
     var xOrig = (width - (columns * cellWidth + (columns - 1) * gap)) / 2;
@@ -75,9 +78,15 @@ function setupKeyboard(part) {
       var row = int(i / columns)
       var x = xOrig + (gap + cellWidth) * col;
       var y = yOrig + (gap + cellHeight) * row;
-      buttons.push(new Button(i + 1, x, y));
+      let btn = new Button(i + 1, x, y);
+      buttons.push(btn);
+      if (btn.value === START_VALUE) {
+        fingerIndex = i;
+      }
+
     }
   } else {
+    // Part 2: diamond layout
     rows = 5;
     columns = 5;
     centreId = int(columns / 2);
@@ -99,7 +108,11 @@ function setupKeyboard(part) {
         } else {
           var x = xOrig + (gap + cellWidth) * col;
           var y = yOrig + (gap + cellHeight) * row;
-          buttons.push(new Button(++count, x, y));
+          let btn = new Button(++count, x, y);
+          if (btn.value === START_VALUE) {
+            fingerIndex = buttons.length;
+          }
+          buttons.push(btn);
         }
       }
     }
@@ -107,7 +120,7 @@ function setupKeyboard(part) {
 }
 
 function getCol(index) {
-  return index % columns;;
+  return index % columns;
 }
 
 function getRow(index) {
@@ -129,7 +142,7 @@ function moveFinger(direction) {
 }
 
 function update() {
-  var instruction = input[currentDigit].charAt(currentInstruction);
+  var instruction = instructions[currentDigit].charAt(currentInstruction);
   
   // Update the cursor if needed
   var newIndex = moveFinger(instruction);
@@ -141,13 +154,14 @@ function update() {
   
   // Move to the next instruction
   currentInstruction++;
-  if (currentInstruction >= input[currentDigit].length) {
+  if (currentInstruction >= instructions[currentDigit].length) {
     code += buttons[fingerIndex].value;
-    // Move to next digit or finish
-    if (currentDigit >= input.length) {
+    // Look at next digit
+    currentDigit++;
+    currentInstruction = 0;
+    // Make sure it's not finished
+    if (currentDigit >= instructions.length) {
       finished = true;
-    } else {
-      nextDigit();
     }
   }
 }

@@ -2,5 +2,15 @@
     "year": 2016,
     "day": 3,
     "title": "Squares With Three Sides",
-    "tags": ["data-validation", "numbers"]
+    "tags": ["data-validation", "numbers"],
+    "instructions": {
+        "Instructions": [
+            "Use the buttons in the top right to switch the input."
+        ],
+        "Algorithm": [
+            "Construct an array holding all edges ordered depending on the current part of the puzzle.", "Check each frame if a new triangle is valid or not."
+        ]
+    },
+    "solved": [1,2],
+    "visuals": 0
 }

@@ -14,8 +14,13 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(400,400);
+  createCanvas(400,200).parent('sketch');
   
+  textAlign(CENTER);
+  loadPuzzle();
+}
+
+function loadPuzzle() {
   for (var i = 0; i < input.length; i++) {
     var match = regexp.exec(input[i]);
     var room = new Room(match[1], int(match[2]), match[3]);
@@ -27,9 +32,9 @@ function draw() {
   update();
   
   background(250);
-  text(sum, width/2, height/3)
-  text(valid, width/3, height*2/3)
-  text(invalid, width*2/3, height*2/3)
+  text('Sum of ids of real rooms: ' + sum, width/2, height/3);
+  text('Real rooms: '  +   valid, width*1/3, height*2/3);
+  text('False rooms: ' + invalid, width*2/3, height*2/3);
 }
 
 function update() {

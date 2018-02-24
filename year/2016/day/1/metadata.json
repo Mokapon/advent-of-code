@@ -2,5 +2,19 @@
     "year": 2016,
     "day": 1,
     "title": "No Time for a Taxicab",
-    "tags": ["grid", "movement", "instructions"]
+    "tags": ["grid", "movement", "instructions"],
+    "instructions": {
+        "Instructions": [
+            "Use the buttons in the top right to switch the input."
+        ],
+        "Algorithm": [
+            "Go through the moves one by one. For part 2, keep trace of all previous locations",
+            "Part 1 and 2 solved at the same time. The result is displayed in the console."
+        ],
+        "Display": [
+            "Follow the bunny with the camera, displaying previously visited locations each frame."
+        ]
+    },
+    "solved": [1,2],
+    "visuals": 1
 }

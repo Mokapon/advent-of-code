@@ -2,5 +2,15 @@
     "year": 2016,
     "day": 5,
     "title": "How About a Nice Game of Chess?",
-    "tags": ["hashing", "string"]
+    "tags": ["hashing", "string"],
+    "instructions": {
+        "Instructions": [
+            "Use the buttons in the top right to switch the input."
+        ],
+        "Note": [
+            "We check 10,000 indices per frame to make the resolution faster. Change this number in your console by typing 'step = 2000' for example."
+        ]
+    },
+    "solved": [1,2],
+    "visuals": 0
 }

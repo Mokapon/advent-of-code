@@ -2,5 +2,13 @@
     "year": 2016,
     "day": 4,
     "title": "Security Through Obscurity",
-    "tags": ["data-validation", "regexp"]
+    "tags": ["data-validation", "regexp"],
+    "instructions": {
+        "Algorithm": [
+            "Go through each room, checking if the checksum follows the guidelines.",
+            "For part 2, decipher the names of the rooms. The one containing 'northpole' is displayed in the console when found."
+        ]
+    },
+    "solved": [1,2],
+    "visuals": 0
 }

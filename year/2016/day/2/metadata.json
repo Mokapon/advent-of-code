@@ -2,5 +2,18 @@
     "year": 2016,
     "day": 2,
     "title": "Bathroom Security",
-    "tags": ["instructions"]
+    "tags": ["instructions"],
+    "instructions": {
+        "Instructions": [
+            "Use the buttons in the top right to switch the input."
+        ],
+        "Algorithm": [
+            "Each frame we apply a single move. If we reach the end of a line, save the value on the button and go to the next line."
+        ],
+        "Display": [
+            "The layout is created depending on the current puzzle."
+        ]
+    },
+    "solved": [1,2],
+    "visuals": 1
 }

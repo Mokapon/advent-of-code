@@ -14,11 +14,6 @@ function Bunny() {
     } else if (this.dir === 3) {
       this.pos.x -= 1
     }
-    for (var i = 0; i < this.trace.length ; i++) {
-      if (this.trace[i].x === this.pos.x && this.trace[i].y === this.pos.y) {
-        console.log("found " + this.pos);
-      }
-    }
   }
   this.right = function() {
     this.dir = (this.dir + 1) % 4;
