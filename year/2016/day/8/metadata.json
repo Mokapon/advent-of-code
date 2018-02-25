@@ -2,5 +2,12 @@
     "year": 2016,
     "day": 8,
     "title": "Two-Factor Authentication",
-    "tags": ["grid", "instructions"]
+    "tags": ["grid", "instructions"],
+    "instructions": {
+        "Algorithm": [
+            "Go through the instructions one at a time, updating the display."
+        ]
+    },
+    "solved": [1,2],
+    "visuals": 1
 }

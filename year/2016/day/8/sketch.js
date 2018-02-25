@@ -18,18 +18,12 @@ function preload() {
 }
 
 function setup() {
-  createCanvas((cols + 1) * cellSize, (rows + 2) * cellSize);
+  createCanvas((cols + 1) * cellSize, (rows + 2) * cellSize).parent('sketch');
   for (var i = 0; i < rows; i++) {
     grid[i] = [];
     for (var j = 0; j < cols; j++) {
       grid[i][j] = new Cell(j * cellSize, i * cellSize);
     }
-  }
-}
-
-function mousePressed() {
-  if (index < input.length) {
-    //parseInstruction(input[index++]);
   }
 }
 
@@ -50,9 +44,6 @@ function draw() {
 }
 
 function parseInstruction(instr) {
-  //rect 1x2
-  //rotate row y=1 by 10
-  //rotate column x=0 by 1
   var res = input_regex.exec(instr);
   
   console.log(res);

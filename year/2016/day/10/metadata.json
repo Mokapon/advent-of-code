@@ -2,5 +2,21 @@
     "year": 2016,
     "day": 10,
     "title": "Balance Bots",
-    "tags": ["instructions", "simulation"]
+    "tags": ["instructions", "simulation"],
+    "instructions": {
+        "Instructions": [
+            "Use the buttons in the top right to switch the input."
+        ],
+        "Algorithm": [
+            "Parse the input and create objects for each input, output, chip, and bot.",
+            "Each frame, look for a bot that can either get a chip from an input, or has two chips and should act on it.",
+            "If no robot can act anymore, we reached the end finished. Answers are written to the console."
+        ],
+        "Display": [
+            "Compute the size of the canvas based on number of inputs, outputs and bots.",
+            "Each bot action takes place in several steps: moving to the location, acting on the chip, moving back to original position."
+        ]
+    },
+    "solved": [1,2],
+    "visuals": 1
 }

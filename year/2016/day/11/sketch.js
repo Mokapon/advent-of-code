@@ -22,20 +22,28 @@ let floors;
 let elements;
 
 function preload() {
-  inputs.push(loadStrings('input_small.txt'));
-  inputs.push(loadStrings('input11.txt'));
-  inputs.push(loadStrings('input-p2.txt'));
+  inputs.push(loadStrings('input/example.txt'));
+  inputs.push(loadStrings('input/part1.txt'));
+  inputs.push(loadStrings('input/part2.txt'));
 }
 
 function setup() {
-  frameRate(4);
+  frameRate(10);
+
+  createCanvas(400, 400).parent('sketch') ;
+  strokeWeight(2);
+  textSize(textSize()*2);
+
+  loadPuzzle(0);
+}
+
+function loadPuzzle(puzzle) {
+  currentInput = puzzle;
   reset();
 
   let w = floorWidth + infoWidth;
   let h = floorHeight * floors.length;
-  createCanvas(w + margin * 2, h + margin * 2);
-  strokeWeight(2);
-  textSize(textSize()*2)
+  resizeCanvas(w + margin * 2, h + margin * 2);
 }
 
 function draw() { 
@@ -88,9 +96,6 @@ function keyReleased() {
   } else if (key === 'U' && done) {
     auto = false;
     undoMove();
-  } else if (key >= 1 && key <=inputs.length) {
-    currentInput = key - 1;
-    reset();
   } else if (keyCode === ENTER  && !auto && !done) {
     playNextMove();
   }
@@ -119,6 +124,7 @@ function undoMove() {
 function getNextMove() {
   let moves=[];
   let previousMove = movesHistory[movesHistory.length - 1];
+  console.log(previousMove);
 
   let currentFloor = floors[elevator.floor];
 
@@ -130,12 +136,11 @@ function getNextMove() {
   } else if (previousMove && previousMove.length === 2 
     && elevator.floor > 0
     && currentFloor.getElements().length === 2
-    && previousMove[0] === UP
-    && ((floors[floors.length - 1].isStable()
-      && previousMove[1]%2===0)
-     || (previousMove[1]%2===1
-      && floors[floors.length - 1].getElements().length===1 
-      && floors[floors.length - 1].getElements()[0]%2===1))) {
+    && previousMove[0] === UP &&
+      ((floors[floors.length - 1].isStable() && previousMove[1]%2===0)
+      || (previousMove[1]%2===1
+        && floors[floors.length - 1].getElements().length===1 
+        && floors[floors.length - 1].getElements()[0]%2===1))) {
     // If we put a single generator up, and there is only the associated chip here, keep going up
     // If we put a single chip up, and below is only a single chip, keep going up
       dirs.push(UP);
@@ -186,10 +191,6 @@ function getNextMove() {
         }
         return elts2.length - elts1.length;
       } else {
-        // TODO not ok Priority to generators going up
-        if (elts2.length === 1 && elts2[0]%2===0) {
-          //return 1;
-        }
         return -1;
       }
     } else {
@@ -204,14 +205,12 @@ function getNextMove() {
         }
         return elts1.length - elts2.length;
       } else {
-        // TODO not ok Priority to generators going up
-        if (elts1.length === 1 && elts1[0]%2===0) {
-          //return -1;
-        }
         return 1;
       }
     }
   });
+
+  console.log(moves);
 
   for (let i = 0; i<moves.length;i++) {
     if (isMoveValid(moves[i])) {
@@ -318,7 +317,6 @@ function isFloorValid(gens, chips) {
 function checkEnd() {
   if (floors[floors.length-1].getElements().length === elements.length) {
     done = true;
-    console.log(movesHistory);
   }
 }
 

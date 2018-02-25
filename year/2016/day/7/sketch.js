@@ -19,7 +19,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(400, 400).parent('sketch');
 }
 
 function draw() {
@@ -27,8 +27,8 @@ function draw() {
     checkString(input[index++]);
   }
   background(250);
-  text(tls, width / 2, height / 3);
-  text(ssl, width / 2, height * 2 / 3);
+  text('Supporting TLS: ' + tls, width / 2, height / 3);
+  text('Supporting SSL: ' + ssl, width / 2, height * 2 / 3);
 }
 
 function checkString(s) {

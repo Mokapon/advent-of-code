@@ -2,5 +2,12 @@
     "year": 2016,
     "day": 7,
     "title": "Internet Protocol Version 7",
-    "tags": ["data-validation", "regexp"]
+    "tags": ["data-validation", "regexp"],
+    "instructions": {
+        "Algorithm": [
+            "Use regexps to check the different requirements. Could not come up with a single regexp."
+        ]
+    },
+    "solved": [1,2],
+    "visuals": 0
 }

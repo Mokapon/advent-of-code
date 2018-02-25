@@ -2,5 +2,29 @@
     "year": 2016,
     "day": 11,
     "title": "Radioisotope Thermoelectric Generators",
-    "tags": ["simulation", "ai"]
+    "tags": ["simulation", "ai"],
+    "instructions": {
+        "Instructions": [
+            "Use the buttons in the top right to switch the input.",
+            "Press 'A' to start or stop automatic play. Press 'Enter' to play a single move, and 'U' to undo the last move. Press 'R' to restart the puzzle."
+        ],
+        "General Algorithm": [
+            "The AI works in two steps: first, find all possible moves for the current configuration, then, order them by priority and apply the one with higher priority.",
+            "We define the target floor as 'stable' if it only contains pairs of associated chips and generators. At all times our objective is to maintain this stability.",
+            "To be able to add a new pair in the stable floor, we cannot add directly a chip-generator pair, because one of the two would have to go away again. So, we follow these steps:",
+            "<ul><li>Bring two generators to the target floor.</li><li>If there is only one chip on the target floor, go back with it and return to the target floor with 2 of the chips associated with the placed generators.</li><li>Otherwise, go back with one of the two single generators to get its chip. Bring them back to the target floor. We can leave the floor with the other single generator. Target floor is stable again.</li><li>Go get a second generator and repeat the process until the target floor contains all chips and generators.</li></ul>"
+        ],
+        "Detailed Algorithm": [
+            "To find the appropriate moves, we first look for the direction we want to go towards, either up (away from the target) or down (towards the target floor), with the following rules:",
+            "<ul><li>If the floor we are in was empty before, keep going in the same direction.</li><li>If we just went up with a generator, the target floor is stable, and that only the associated chip is on the current floor, keep going up (to go get another generator).</li><li>If we just went up with a chip and the target floor contains a single chip, keep going up (to find its associated generator).</li><li>Otherwise, consider any direction.</li></ul>",
+            "Once we have chosen the possible directions, combine them with elements of the floor to get all possible moves.",
+            "Sort the moves according to the following rules:",
+            "<ul><li>When going up, prioritize moves with only one element.</li><li>When going down, prioritize moves with two element.</li><li>When going down with two elements, prioritize moves where both elements are generators.</li><li>When going up with a single element, prioritize moves where the moved element is a generator.</li><li>In all other cases, prioritize moves down over moves going up.</li></ul>",
+            "Go through the moves, and apply the first one that is valid. Moves are considered invalid if any of the following is true:",
+            "<ul><li>There are only empty floors in this direction.</li><li>There are no (non-empty) floor in this direction that we can reach with the element(s) we are tring to move.</li><li>The move is the opposite one of the one we just made.</li></ul>"
+        ]
+    },
+    "solved": [1,2],
+    "visuals": 1,
+    "note": "This was pretty hard (I didn't go for a brute-force solution), unless I missed something obvious."
 }

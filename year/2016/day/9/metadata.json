@@ -2,5 +2,22 @@
     "year": 2016,
     "day": 9,
     "title": "Explosives in Cyberspace",
-    "tags": ["data-compression", "result-anticipation"]
+    "tags": ["data-compression", "regexp", "result-anticipation"],
+    "instructions": {
+        "Instructions": [
+            "Use the buttons in the top right to switch the input."
+        ],
+        "Implemetation": [
+            "There are two algorithms implemented: one executes the decompression algorithm, the other just measures the expected len of the decompressed string.",
+            "For the example, both these algorithms are tested for version 1 and 2 of the decompression algorithms.",
+            "For part 1 of the puzzle, the decompression is applied, one per frame at a time and the resulting length displayed.",
+            "For part 2 the resulting string is too big, so only the measuring algorithm is executed, in one go."
+        ],
+        "Algorithm": [
+            "The decompression algorithm matches elements similar to (AxB) and applies it. The difference between version one and 2 is that for version 1, the search for the next match will start after the impacted part of the string. For part 2, the regexp index is reset to not miss any match.",
+            "The measuring algorithm follows the same principle, calling itself recursively on substrings when matches happen."
+        ]
+    },
+    "solved": [1,2],
+    "visuals": 0
 }
