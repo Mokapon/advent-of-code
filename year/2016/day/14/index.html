@@ -1,75 +1,79 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>AoC 2016 - day 14</title>
-    <link rel="shortcut icon" type="image/png" href="../../../../img/favicon.png">
+<head>
+  <meta charset="UTF-8">
+  <title>AoC</title>
+  <link rel="shortcut icon" type="image/png" href="../../../../img/favicon.png">
 
-    <!-- style -->
-    <link href="../../../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../../../../css/aoc.css" rel="stylesheet">
+  <!-- style -->
+  <link href="../../../../static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../../../css/aoc.css" rel="stylesheet">
 
-    <!-- p5 js -->
-    <script src="../../../../lib/p5.min.js" type="text/javascript"></script>
-    
-    <!-- other libs -->
-    <script src="../../../../lib/md5.js" type="text/javascript"></script>
+  <!-- p5 js -->
+  <script src="../../../../static/p5/p5.min.js" type="text/javascript"></script>
+  <script src="../../../../static/lib/md5.js" type="text/javascript"></script>
 
-    <!-- your JS files here -->
-    <script src="sketch.js" type="text/javascript"></script>
-  </head>
+  <!-- your JS files here -->
+  <script src="sketch.js" type="text/javascript"></script>
+</head>
 
-  <body>
-    <div class="container-fluid bg-light" id="content">
-      <div class="jumbotron" id="aoc-header">
-        <div class="row">
-          <h2 class="col-8 aoc-title">Advent of Code 2016, day 14:</h1>
-          <h3 class="col-4 font-aoc">
-            <a href="http://adventofcode.com/2016/day/13" target="_blank">
-            [See puzzle]</a>
-          </h3>
-        </div>
-        <div class="row">
-          <h2 class="col-8">One-Time Pad</h2>
-          <div class="col-4">
-            <div class="btn-group btn-group-toggle" data-toggle="buttons">
-              <label class="btn btn-outline-primary active">
-                <input type="radio" name="options" id="example" autocomplete="off" checked onchange="loadPuzzle(0)">Example
-              </label>
-              <label class="btn btn-outline-primary">
-                <input type="radio" name="options" id="part1" autocomplete="off" onchange="loadPuzzle(1)">Part 1
-              </label>
-              <label class="btn btn-outline-primary">
-                <input type="radio" name="options" id="part2" autocomplete="off" onchange="loadPuzzle(2)">Part 2
-              </label>
-            </div>
-          </div>
-        </div>
-        <!-- instructions -->
-        <div class="card bg-light">
-          <div class="card-header">
-            <h4><a data-toggle="collapse" href="#instructions" aria-expanded="true" aria-controls="instructions">Instructions</a></h4>
-          </div>
-          <div class="collapse" id="instructions">
-            <div class="card-body">
-              <p>Press 'R' to reset the puzzle.</p>
-              <p>Use the buttons in the top right to switch the puzzle.</p>
-            </div>
+<body>
+  <div class="container-fluid bg-light" id="content">
+    <div class="jumbotron" id="aoc-header">
+      <div class="row">
+        <h2 class="col-8 aoc-title">
+          <a href="https://github.com/Mokapon/advent-of-code/tree/master/year/" title="See code" target="_blank" id="github-link"><img src="../../../../img/github-mark.png"/></a>
+          <span id="main-title"><a href="../../index.html" id="year-title">Advent of Code</a></span>
+        </h2>
+        <h3 class="col-4 font-aoc">
+          <a href="https://adventofcode.com" target="_blank" id="puzzle-link">[See puzzle]</a>
+        </h3>
+      </div>
+      <div class="row">
+        <h2 class="col-8" id = "puzzle-title"></h2>
+        <div class="col-4">
+          <div class="btn-group-toggle btn-group" data-toggle="buttons">
+            <label class="btn btn-outline-primary active">
+              <input type="radio" name="options" id="example" autocomplete="off" checked onchange="loadPuzzle(0)">Example
+            </label>
+            <label class="btn btn-outline-primary">
+              <input type="radio" name="options" id="part1" autocomplete="off" onchange="loadPuzzle(1)">Part 1
+            </label>
+            <label class="btn btn-outline-primary">
+              <input type="radio" name="options" id="part2" autocomplete="off" onchange="loadPuzzle(2)">Part 2
+            </label>
           </div>
         </div>
       </div>
-
-      <div>
-        Woops, I deleted all my code by mistake, sorry... T_T
-      </div>
-      <!-- sketch will go here -->
-      <div id="sketch">
+      <!-- instructions -->
+      <div class="card bg-light">
+        <div class="card-header">
+          <h4><a data-toggle="collapse" href="#instructions" aria-expanded="true" aria-controls="instructions">Instructions</a></h4>
+        </div>
+        <div class="collapse" id="instructions">
+          <div class="card-body" id = "instructions-content">
+          </div>
+        </div>
       </div>
     </div>
-    <!-- bootstrap basic js -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 
-  </body>
+    <!-- sketch will go here -->
+    <div id="sketch">
+    </div>
+  </div>
+
+  <footer class="footer site-footer bg-light">
+    <div class="container-fluid" id="footer-content">
+      <span class="text-muted">(c) Cécile Camillieri 2018</span>
+    </div>
+  </footer>
+
+  <!-- bootstrap js -->
+  <script src="../../../../static/lib/jquery-3.3.1.min.js"></script>
+  <script src="../../../../static/bootstrap/js/bootstrap.min.js"></script>
+
+  <!-- Page metadata -->
+  <script src="../../../../js/read-metadata.js" type="text/javascript"></script>
+
+</body>
 </html>

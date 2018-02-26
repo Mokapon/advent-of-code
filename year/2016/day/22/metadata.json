@@ -2,5 +2,23 @@
     "year": 2016,
     "day": 22,
     "title": "Grid Computing",
-    "tags": ["grid", "path-finding"]
+    "tags": ["grid", "path-finding", "a*"],
+    "instructions": {
+        "Instructions": [
+            "Use the buttons in the top right to switch the input."
+        ],
+        "Algorithm": [
+            "Store the node in a 2D array.",
+            "In the first step, look for the viable pairs as asked. Keep track of the element of the pair with the availability as a future possible starting point.",
+            "Sort the found starting points based on the distance to the target (short distance is better). However in our case there is only one possible starting point.",
+            "Then, we look to transfer the target data to the (0,0) node. We apply the following algorithm.",
+            "<ul><li>Let's call the active node, the current empty node. At the begining it is our starting node.</li><li>Our objective is to move this empty node adjacent to the data to transfer while being as close as possible to the final target node (0,0).</li><li>We call this intermediary node the current target. To reach the current target, we use A* algorithm to move our empty node around.</li><li>Once arrived at the target, we move the data over to it. Pick the next target, and keep going until we reach the final target point.</li></ul>"
+        ],
+        "Display": [
+            "For each node, white represents available space, blue the taken space.",
+            "The data to transfer is colored green instead of blue."
+        ]
+    },
+    "solved": [1,2],
+    "visuals": 1
 }

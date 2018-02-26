@@ -2,5 +2,20 @@
     "year": 2016,
     "day": 19,
     "title": "An Elephant Named Joseph",
-    "tags": ["simulation"]
+    "tags": ["simulation"],
+    "instructions": {
+        "Instructions": [
+            "Use the buttons in the top right to switch the input."
+        ],
+        "Algorithm": [
+            "Each frame one player gives their presents to another one. For bigger player count, run 1000 such steps per frame.",
+            "Second part of the puzzle is slow because of the manipulation of such a huge array. Would have to consider another solution like a linked list."
+        ],
+        "Display": [
+            "Unfortunately, because of the huge number of players the display could not scale up."
+        ]
+    },
+    "solved": [1,2],
+    "visuals": 0,
+    "note": "The 'nice' display couldn't scale up for the actual puzzle. Using a linked list rather than an array could probably help a lot."
 }

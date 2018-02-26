@@ -2,5 +2,17 @@
     "year": 2016,
     "day": 24,
     "title": "Two Steps Forward",
-    "tags": ["grid", "path-finding", "multiple-targets"]
+    "tags": ["grid", "path-finding", "multiple-targets", "A*", "travelling-merchant"],
+    "instructions": {
+        "Instructions": [
+            "Use the buttons in the top right to switch the input."
+        ],
+        "Algorithm": [
+            "At loading, find the shortest path between each pair of targets using A* and store its length.",
+            "Create all possible global paths through the targets, always starting by 0. For part 2, always end the path with 0 as well.",
+            "Each frame, measure the total length of one of the paths looking for the shortest one, until all have been checked."
+        ]
+    },
+    "solved": [1,2],
+    "visuals": 1
 }

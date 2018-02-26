@@ -1,18 +1,20 @@
-let EXAMPLE = 0;
-let PART1 = 1;
-let PART2 = 2;
+const EXAMPLE = 0;
+const PART1 = 1;
+const PART2 = 2;
+
+// display constants
+const MARGIN = 10;
+const RANGE_HEIGHT = 10;
+const RANGE_Y = 100;
+const RANGE_DIAMETER = 15;
+const TEXT_MARGIN = 5;
+const TEXT_Y = RANGE_Y + RANGE_HEIGHT + TEXT_MARGIN;
+
+let excludedColor;
+let validColor;
 
 let inputs = [];
 let currentPuzzle;
-
-// display constants
-let MARGIN = 10;
-let RANGE_HEIGHT = 10;
-let RANGE_Y = 100;
-let RANGE_DIAMETER = 15;
-let TEXT_MARGIN = 5;
-let TEXT_Y = RANGE_Y + RANGE_HEIGHT + TEXT_MARGIN;
-
 // simulation status
 let finished;
 
@@ -25,7 +27,6 @@ let currentRange;
 function preload() {
   inputs[EXAMPLE] = loadStrings('input/example.txt');
   inputs[PART1] = loadStrings('input/part1.txt');
-  inputs[PART2] = inputs[PART1];
 }
 
 function setup() {
@@ -35,6 +36,8 @@ function setup() {
   textSize(15);
   textAlign(CENTER, TOP);
 
+  excludedColor = color(35,35,105);
+  validColor = color(0,155,255);
   //frameRate(10);
   loadPuzzle(EXAMPLE);
 }
@@ -43,11 +46,11 @@ function draw() {
   background(230);
 
   // draw ranges
-  fill(155,0,55);
+  fill(excludedColor);
   totalRange.draw();
 
   for (let range of validRanges) {
-    fill(0,155,55);
+    fill(validColor);
     range.draw();
   }
 
@@ -61,8 +64,8 @@ function draw() {
 function nextStep() {
   let toExclude = excludedRanges[currentRange];
   if (!toExclude) {
-    console.log('Finished. Lowest value unblocked IP: ' + validRanges[0].low);
-    console.log('Allowed IPs: ' + countAllowed());
+    console.log('[PART 1] Lowest value of unblocked IP: ' + validRanges[0].low);
+    console.log('[PART 2] Number of allowed IPs: ' + countAllowed());
     finished = true;
     return;
   }

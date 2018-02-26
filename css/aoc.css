@@ -57,7 +57,7 @@ footer {
   margin-top:1em;
 }
 
-#instructions-content p {
+#instructions-content p, #instructions-content ul {
   margin:0;
 }
 

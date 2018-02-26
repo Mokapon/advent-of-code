@@ -2,5 +2,17 @@
     "year": 2016,
     "day": 16,
     "title": "Dragon Checksum",
-    "tags": ["data-manipulation", "strings"]
+    "tags": ["data-manipulation", "strings"],
+    "instructions": {
+        "Instructions": [
+            "Use the buttons in the top right to switch the input."
+        ],
+        "Algorithm": [
+            "Each frame a new step of the Algorithm is applied, first filling the disk, then computing the cheksum.",
+            "This solutions is pretty heavy on the browser for part 2, but should finish eventually."
+        ]
+    },
+    "solved": [1,2],
+    "visuals": 0,
+    "note": "Part 2 of the solution might slow down your browser."
 }

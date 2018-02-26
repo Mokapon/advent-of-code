@@ -47,7 +47,11 @@ function Node(position, used, avail) {
     rect(this.x+1, this.y+1,this.totalBoxSize, this.totalBoxSize);
 
     noStroke();
-    fill(0,0,155);
+    if (this.pos.x === currentDataPosition.x && this.pos.y === currentDataPosition.y) {
+      fill(0,205,105);
+    } else {
+      fill(0,0,155);
+    }
     rect(this.x+1, this.y+1, this.usedBoxSize, this.usedBoxSize);
   }
 

@@ -2,5 +2,21 @@
     "year": 2016,
     "day": 20,
     "title": "Firewall Rules",
-    "tags": ["data-manipulation", "ranges"]
+    "tags": ["data-manipulation", "ranges"],
+    "instructions": {
+        "Instructions": [
+            "Use the buttons in the top right to switch the input."
+        ],
+        "Algorithm": [
+            "We keep track of valid ranges of numbers.",
+            "Each frame, exclude a new range from the valid range(s). This is done in the following way:",
+            "<ul><li>Find valid range that overlaps at least part of the excluded range.</li><li>If the excluded range in entirely comprised in the valid one, we cut the valid range in 2 smaller ones.</li><li>If it's the opposite, we completely remove the valid range</li><li>In other cases, reduce the size of the valid range depending on the overlap.</li></ul>",
+            "Once finished, display the result in console."
+        ],
+        "Display": [
+            "Valid ranges are shown in light blue, invalid ones in dark blue. When the range is a single number, it's shown as a circle."
+        ]
+    },
+    "solved": [1,2],
+    "visuals": 1
 }

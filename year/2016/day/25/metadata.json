@@ -2,5 +2,21 @@
     "year": 2016,
     "day": 25,
     "title": "Clock Signal",
-    "tags": ["instructions", "interpreter", "output-validation"]
+    "tags": ["instructions", "interpreter", "assembly", "output-validation"],
+    "instructions": {
+        "Instructions": [
+            "Press 'R' to reset the puzzle. Press 'A' to run automatically the code or to stop it. Press 'ENTER' to run each line manually.",
+            "Use 'P' to increase the frameRate by 5 (max 60) and 'M' to reduce it (min 5). The default is 10.",
+            "Use the buttons in the top right to switch the input."
+        ],
+        "Algorithm": [
+            "Just like for <a href=\"../12/index.html\">day 12</a> and <a href=\"../23/index.html\">day 23</a>, apply one instruction per frame.",
+            "However here we check for the program output, and restart it, changing the value of register untill the output matches.",
+            "There is no real part 2 to the puzzle, because it's the last day, wooh! :D",
+            "However with the current implementation, finding a way to make the code more efficient programmitacaly proved difficult. So I manually edited the code to add 'modulo' and 'division' instructions, and put it as input for part 2.",
+            "Yup, I kind of cheated for the last day. Oopsie :)"
+        ]
+    },
+    "solved": [1,2],
+    "visuals": 1
 }

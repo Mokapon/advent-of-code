@@ -2,5 +2,13 @@
     "year": 2016,
     "day": 14,
     "title": "One-Time Pad",
-    "tags": ["hashing", "encryption"]
+    "tags": ["hashing", "encryption"],
+    "instructions": {
+        "Oops": [
+            "Code was deleted by mistake. See <a href = \"../../../2015/day/4/index.html\">this page</a> for a similar puzzle."
+        ]
+    },
+    "solved": [],
+    "visuals": 0,
+    "note": "The code for this was deleted. See 2015, day 4 for a similar puzzle."
 }

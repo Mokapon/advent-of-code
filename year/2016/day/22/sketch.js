@@ -52,9 +52,11 @@ function draw() {
   // print grid
   let textX, textY = nodeSize/2;
   for (let x = 0; x < grid.length; x++) {
+    fill(0);
     text(x, margin + (x+1)*nodeSize + nodeSize/2, margin + nodeSize/2);
     for (let y = 0; y < grid[x].length; y++) {
       if (x === 0) {
+        fill(0);
         text(y, margin + nodeSize/2, margin + (y+1)*nodeSize + nodeSize/2);
       }
       grid[x][y].draw();
@@ -85,10 +87,10 @@ function drawPath() {
 
   for (let i = 1; i < path.length; i++) {
     let startNode = path[i-1];
-    let endtNode = path[i];
+    let endNode = path[i];
     beginShape();
     vertex(startNode.x + nodeSize/2, startNode.y + nodeSize/2);
-    vertex(endtNode.x + nodeSize/2, endtNode.y + nodeSize/2);
+    vertex(endNode.x + nodeSize/2, endNode.y + nodeSize/2);
     endShape();
   }
 
@@ -132,7 +134,7 @@ function nextStep() {
 
       if (currentDataPosition.x === targetPosition.x && currentDataPosition.y === targetPosition.y) {
         // Completely finished
-        console.log('SHORTEST PATH FOUND: ' + moves);
+        console.log('[PART 2] SHORTEST PATH FOUND: ' + moves + ' moves.');
         finished = true;
         return;
       } else {
@@ -181,7 +183,7 @@ function updatePath(node) {
   for (let i = startIndex + 1; i < path.length; i++) {
     path[i].moveContentTo(path[i-1]);
     moves++;
-    console.log('move from ' + path[i].pos.x + ';' + path[i].pos.y + ' to ' + path[i-1].pos.x + ';' + path[i-1].pos.y)
+    //console.log('move from ' + path[i].pos.x + ';' + path[i].pos.y + ' to ' + path[i-1].pos.x + ';' + path[i-1].pos.y)
   }
 }
 
@@ -268,8 +270,9 @@ function findViablePairs() {
       }
     }
   }
+  console.log(possibleStarts);
 
-  console.log('Found ' + viablePairs.length + ' viable pairs');
+  console.log('[PART 1] Found ' + viablePairs.length + ' viable pairs');
 }
 
 function getNodePosition(nodeName) {

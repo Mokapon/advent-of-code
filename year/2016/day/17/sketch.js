@@ -56,6 +56,40 @@ function setup() {
   loadPuzzle(EXAMPLE);
 }
 
+function loadPuzzle(puzzle) {
+  currentPuzzle = puzzle;
+
+  passCode = inputs[puzzle][0];
+  bestPathNode = null;
+
+  doors = [];
+  grid = [];
+  for (let x = 0; x < gridWidth; x++) {
+    grid[x] = [];
+    for (let y = 0; y < gridHeight; y++) {
+      grid[x][y] = new Room(x,y);
+      grid[x][y].initDoors();
+    }
+  }
+
+  tree = new Tree(grid[startingPosition.x][startingPosition.y]);
+  currentNode = tree.root;
+  updateDoorsStatus();
+
+  if (finished) {
+    finished = false;
+    loop();
+  }
+
+  // TODO did not find a better way to not kill the browser with computations
+  if (currentPuzzle === PART2) {
+    while (!finished) {
+      nextStep();
+    }
+  }
+}
+
+
 function draw() {
   background(230);
 
@@ -108,75 +142,6 @@ function drawGrid() {
     doorSize+currentNode.pos.y*(roomSize+doorSize)+ roomSize/2, roomSize -5)
 }
 
-function keyReleased() {
-  if (key === 'R') {
-    loadPuzzle(currentPuzzle);
-  } else if (keyCode === UP_ARROW) {
-    move(DIR_UP);
-  } else if (keyCode === DOWN_ARROW) {
-    move(DIR_DOWN);
-  } else if (keyCode === LEFT_ARROW) {
-    move(DIR_LEFT);
-  } else if (keyCode === RIGHT_ARROW) {
-    move(DIR_RIGHT);
-  }
-}
-
-function move(direction) {
-  let newNode = currentNode.moves[direction];
-  if (newNode) {
-    currentNode = newNode;
-    
-    updateDoorsStatus();
-
-    checkTarget();
-  }
-}
-
-function loadPuzzle(puzzle) {
-  currentPuzzle = puzzle;
-
-  passCode = inputs[puzzle][0];
-  bestPathNode = null;
-
-  doors = [];
-  grid = [];
-  for (let x = 0; x < gridWidth; x++) {
-    grid[x] = [];
-    for (let y = 0; y < gridHeight; y++) {
-      grid[x][y] = new Room(x,y);
-      grid[x][y].initDoors();
-    }
-  }
-
-  tree = new Tree(grid[startingPosition.x][startingPosition.y]);
-  currentNode = tree.root;
-  updateDoorsStatus();
-
-  if (finished) {
-    finished = false;
-    loop();
-  }
-
-  // TODO did not find a better way to not kill the browser with computations
-  if (currentPuzzle === PART2) {
-    while (!finished) {
-      nextStep();
-    }
-  }
-}
-
-function updateDoorsStatus() {
-  if (currentNode.parent) {
-    cleanDoorStatus(currentNode.parent);
-  }
-
-  let hash = md5(passCode + currentNode.path);
-  currentNode.room.setDoorsStatus(hash.slice(0,4));
-  for (let dir of currentNode.room.getAvailableMoves()) {
-    currentNode.moves[dir] = new Node(currentNode.room.neighbor(dir), currentNode, dir);
-  }
-}
 
 function nextStep() {
   let possibleMoves = [];
@@ -203,12 +168,36 @@ function nextStep() {
   }
 }
 
+function move(direction) {
+  let newNode = currentNode.moves[direction];
+  if (newNode) {
+    currentNode = newNode;
+    
+    updateDoorsStatus();
+
+    checkTarget();
+  }
+}
+
 function undoMove() {
   if (currentNode.parent) {
     cleanDoorStatus(currentNode);
     currentNode = currentNode.parent;
   }
 }
+
+function updateDoorsStatus() {
+  if (currentNode.parent) {
+    cleanDoorStatus(currentNode.parent);
+  }
+
+  let hash = md5(passCode + currentNode.path);
+  currentNode.room.setDoorsStatus(hash.slice(0,4));
+  for (let dir of currentNode.room.getAvailableMoves()) {
+    currentNode.moves[dir] = new Node(currentNode.room.neighbor(dir), currentNode, dir);
+  }
+}
+
 
 function cleanDoorStatus(node) {
   let room = node.room;
@@ -219,7 +208,7 @@ function cleanDoorStatus(node) {
 
 function checkTarget() {
   if (currentNode.pos.x === targetPosition.x && currentNode.pos.y === targetPosition.y) {
-    console.log('Found new path: ' + currentNode.path);
+    console.log('Found better path: ' + currentNode.path);
     // don't want to come back anymore!
     currentNode.visited = true;
     if (bestPathNode) {
@@ -233,5 +222,19 @@ function checkTarget() {
     } else {
       bestPathNode = currentNode;
     }
+  }
+}
+
+function keyReleased() {
+  if (key === 'R') {
+    loadPuzzle(currentPuzzle);
+  } else if (keyCode === UP_ARROW) {
+    move(DIR_UP);
+  } else if (keyCode === DOWN_ARROW) {
+    move(DIR_DOWN);
+  } else if (keyCode === LEFT_ARROW) {
+    move(DIR_LEFT);
+  } else if (keyCode === RIGHT_ARROW) {
+    move(DIR_RIGHT);
   }
 }

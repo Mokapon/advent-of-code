@@ -13,8 +13,7 @@ function preload() {
 }
 
 function setup() {
-    let canvas = createCanvas(500, 200);
-    canvas.parent('sketch');
+    createCanvas(500, 200).parent('sketch');
 
     loadPuzzle(EXAMPLE);
 }

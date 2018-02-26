@@ -2,5 +2,18 @@
     "year": 2016,
     "day": 15,
     "title": "Timing is Everything",
-    "tags": ["simulation"]
+    "tags": ["simulation", "results-anticipation"],
+    "instructions": {
+        "Instructions": [
+            "Use the buttons in the top right to switch the input.",
+            "Result is displayed in the console."
+        ],
+        "Algorithm": [
+            "Go through every possibility until one is correct.",
+            "This is not the best solutions, we could just compute it by using the fact that the correct starting time is a factor of the size of each disk (delta their starting position).",
+            "This propertu is partly used for part 1 and 2 of the puzzle. Bigger disks are locked in place, and each iteration time is incremented by the factor of the sizes of the locked disks rather than by 1."
+        ]
+    },
+    "solved": [1,2],
+    "visuals": 1
 }

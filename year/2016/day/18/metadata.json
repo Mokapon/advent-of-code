@@ -2,5 +2,19 @@
     "year": 2016,
     "day": 18,
     "title": "Like a Rogue",
-    "tags": ["grid", "cellular-automata"]
+    "tags": ["grid", "cellular-automata"],
+    "instructions": {
+        "Instructions": [
+            "Use the buttons in the top right to switch the input."
+        ],
+        "Algorithm": [
+            "Each frame, apply the provided rules on a new row.",
+            "For part 2, the process is too long because of the number of rows, so each frame we compute 60 rows."
+        ],
+        "Display": [
+            "For part 2, only display the elements 60 at a time (+ last row of the previous batch) to avoid crashing the browser."
+        ]
+    },
+    "solved": [1,2],
+    "visuals": 1
 }

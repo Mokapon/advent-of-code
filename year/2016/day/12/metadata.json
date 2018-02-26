@@ -2,7 +2,7 @@
     "year": 2016,
     "day": 12,
     "title": "Leonardo's Monorail",
-    "tags": ["instructions", "interpreter"],
+    "tags": ["instructions", "interpreter", "assembly"],
     "instructions": {
         "Instructions": [
             "Press 'R' to reset the puzzle. Press 'A' to run automatically the code or to stop it. Press 'ENTER' to run each line manually.",

@@ -111,7 +111,7 @@ function keyReleased() {
   } else if (key === 'P') {
     fps = min(60, fps +5);
     frameRate(fps);
-  } else if (keyCode === 'M') {
+  } else if (key === 'M') {
     fps = max(5, fps -5);
     frameRate(fps);
   }

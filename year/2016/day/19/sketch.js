@@ -25,7 +25,7 @@ let currentPlayerIndex;
 function preload() {
   inputs[EXAMPLE] = 5;
   inputs[PART1] = 3017957;
-  inputs[PART2] = 3017;
+  inputs[PART2] = 3017957;
 }
 
 function setup() {
@@ -49,12 +49,11 @@ function draw() {
       player.draw();
     }
   } else {
-    text('Left: ' + numActivePlayers, 0, 0);
+    text('Players left in game: ' + numActivePlayers + ' of ' + players.length, 0, 0);
   }
 
   if (finished) {
     noLoop();
-    console.log(frameCount);
   } else {
     nextStep();
     checkEnd();
@@ -130,5 +129,4 @@ function loadPuzzle(puzzle) {
     finished = false;
     loop();
   }
-  console.log(frameCount);
 }

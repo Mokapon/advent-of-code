@@ -2,5 +2,21 @@
     "year": 2016,
     "day": 13,
     "title": "A Maze of Twisty Little Cubicles",
-    "tags": ["grid", "path-finding"]
+    "tags": ["grid", "path-finding", "A*"],
+    "instructions": {
+        "Instructions": [
+            "Press 'R' to reset the puzzle. Press 'A' to run automatically the code or to stop it. Press 'ENTER' to run each line manually.",
+            "Use 'P' to increase the frameRate by 5 (max 60) and 'M' to reduce it (min 5). The default is 10.",
+            "Use the buttons in the top right to switch the input."
+        ],
+        "Algorithm": [
+            "The input code is analyzed and some instructions patterns are replaced by new instructions: add or sub.",
+            "This allows to reduce the number of iterations required to solve the puzzle."
+        ],
+        "Display": [
+            "On the left is the code provided as input. On the right is the modified code, if there is any."
+        ]
+    },
+    "solved": [1,2],
+    "visuals": 1
 }

@@ -2,5 +2,22 @@
     "year": 2016,
     "day": 17,
     "title": "Two Steps Forward",
-    "tags": ["grid", "path-finding"]
+    "tags": ["grid", "path-finding"],
+    "instructions": {
+        "Instructions": [
+            "Use the buttons in the top right to switch the input."
+        ],
+        "Algorithm": [
+            "Explore the possible paths to find the required one. For this, use a tree structure starting from the first room. We then use an approach similar to a depth-first search to explore each possible path.",
+            "Each node of a tree is a step of a path, the root node being the first room. For each node, use the passcode and the path followed to reach it to find the available next moves and add the associated children nodes.",
+            "Each frame, from the current node, move to a non visited children, if there is none, compare the total path length to the best one yet and go back the path to the previous node with non-visited children. If there is none, the search is finished.",
+            "For part 1, we don't go all the way down the tree, but instead stop as soon as the current path is longer than the current shortest one. For part 2, since we are looking for the longest path, we can't, so we have to test out every possible path."
+        ],
+        "Display": [
+            "For part 1, the path displayed is the current path being explored. When finished the shortest path is displayed.",
+            "For part 2 requires too many iterations so everything is computed at once and only the longest path is shown."
+        ]
+    },
+    "solved": [1,2],
+    "visuals": 1
 }
