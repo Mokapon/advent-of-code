@@ -17,3 +17,70 @@ function ListPrinter(startingPosition, totalSize, elementSize, listLength, displ
         }
     }
 }
+
+function TextBlockPrinter(startingX, startingY, blockWidth, lineHeight, input) {
+    this.startingX = startingX;
+    this.startingY = startingY;
+    this.endingY;
+    this.blockWidth = blockWidth;
+    this.lineHeight = lineHeight;
+    this.textLength = input.length;
+    this.lines = initLines(input, blockWidth);
+    this.lineLength = this.lines[0].length;
+
+    this.printBlock = function() {
+        push();
+        textAlign(CENTER);
+        let y = this.startingY;
+        for (let line of this.lines) {
+            text(line, startingX + blockWidth/2, y);
+            y +=  lineHeight;
+        }
+        this.endingY = y;
+        pop();
+    }
+
+    this.changeCharStyle = function(index, color, style) {
+        if (index >= this.textLength) {
+            return;
+        }
+
+        let lineIndex = floor(index/this.lineLength);
+        let line = this.lines[lineIndex];
+        let offset = index % this.lineLength;
+        let char = line.charAt(offset);
+        let x = this.startingX + this.blockWidth/2 - textWidth(line)/2 + textWidth(line.substring(0, offset));
+        let y = this.startingY + lineIndex*this.lineHeight;
+
+        push();
+        textAlign(LEFT);
+        if (style !== undefined) {
+            textStyle(style)
+        }
+        if (color) {
+            fill(color);
+        }
+        text(char, x, y);
+        
+        pop();
+
+    } 
+}
+
+
+function initLines(text, blockWidth) {
+    let lines = [];
+
+    let lineLength = text.length;
+    let numLines = 1;
+    let inputWidth = textWidth(text);
+    if (inputWidth > blockWidth) {
+        numLines = ceil(inputWidth / blockWidth);
+        lineLength = ceil(input.length / numLines);
+    }
+
+    for (let i = 0; i < numLines; i++) {
+        lines.push(input.substring(i*lineLength, (i+1)*lineLength));
+    }
+    return lines;
+}
