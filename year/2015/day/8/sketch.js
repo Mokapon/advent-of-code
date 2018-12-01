@@ -16,6 +16,7 @@ const STRING_WIDTH = 120
 const STRING_X = 125;
 const ACTUAL_X = 400;
 const ESCAPED_X = 675;
+let listPrinter;
 let maxDisplayedStrings;
 let displayScrollOffset;
 
@@ -63,7 +64,7 @@ function draw() {
     text('Escaped - Total: ' + (totalEscapedChars - totalAllChars), width*2/3, DIFFERENCE_CHARS_Y);
 
     textSize(12);
-    displayList(currentIndex, strings.length, maxDisplayedStrings, STRINGS_Y, LINE_HEIGHT, displayScrollOffset, displayString);
+    listPrinter.printList(currentIndex);
 
     if (finished) {
         noLoop();
@@ -128,6 +129,8 @@ function loadPuzzle(puzzle) {
     totalAllChars = 0;
     totalActualChars = 0;
     totalEscapedChars = 0;
+
+    listPrinter = new ListPrinter(STRINGS_Y, height - STRINGS_Y, LINE_HEIGHT, strings.length, displayString);
 
     if (finished) {
         finished = false;
