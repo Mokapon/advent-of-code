@@ -1,0 +1,19 @@
+{
+    "year": 2017,
+    "day": 1,
+    "title": "Reverse Captcha",
+    "instructions": {
+        "Instructions": [
+            "Switch input with the buttons in the top right."
+        ],
+        "Algorithm": [
+            "Check each iteration if the value of the current index should be added to the total, for both part 1 and 2 at the same time."
+        ],
+        "Display":[
+            "Display the text and highlight the characters that are currently being analyzed"
+        ]
+    },
+    "tags": ["data-analysis", "string", "numbers"],
+    "solved": [1,2],
+    "visuals": 0
+}
