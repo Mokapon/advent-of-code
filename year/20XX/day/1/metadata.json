@@ -7,7 +7,7 @@
             "Change the input with the buttons in the top right."
         ],
         "Algorithm": [
-            "This is an example page. Change this text in the <em>metadata.json</em> file.", 
+            "This is an example page. Change this text in the <em>metadata.json</em> file."
         ],
         "Display": [
             "You can add any new section you want in the instructions attribute in metadata.json."
