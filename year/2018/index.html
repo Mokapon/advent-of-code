@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Advent of Code 2018</title>
+  <link rel="shortcut icon" type="image/png" href="../../img/favicon.png">
+
+  <!-- bootstrap & fontawesome -->
+  <link href="../../static/fontawesome/css/fontawesome-all.min.css" rel="stylesheet">
+  <link href="../../static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- style -->
+  <link href="../../css/aoc.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container-fluid bg-light" id="content">
+    <div class="jumbotron" id="aoc-header">
+      <div class="row">
+        <h2 class="col-8 aoc-title">
+          <a href="https://github.com/Mokapon/advent-of-code/tree/master/year/2018" id="github-link" title="See code" target="_blank">
+            <img src="../../img/github-mark.png"/>
+          </a>
+          <span id="main-title"><a href="../../index.html">Advent of Code</a> 2018</span>
+        </h2>
+        <h3 class="col-4 font-aoc">
+          <a href="https://adventofcode.com/2018" target="_blank">[Go to calendar]</a>
+        </h3>
+        <h2 class="col-8">
+          Solutions developed using p5.js
+        </h2>
+        <h3 class="col-4 font-aoc">
+          <a href="https://p5js.org/" target="_blank">[Go to p5js.org]</a>
+        </h3>
+      </div>
+    </div>
+    <!-- List of the solutions -->
+    <div class="container-fluid">
+      <ul id="days-list">
+      </ul>
+    </div>
+  </div>
+
+  <footer class="footer site-footer bg-light">
+    <div class="container-fluid" id="footer-content">
+      <span class="text-muted">(c) Cécile Camillieri 2018</span>
+    </div>
+  </footer>
+  
+  <!-- bootstrap js -->
+  <script src="../../static/lib/jquery-3.3.1.min.js"></script>
+  <script src="../../static/bootstrap/js/bootstrap.min.js"></script>
+
+  <!-- Load metaData on the solutions -->
+  <script type="text/javascript" src="../../js/list-days.js" onLoad="fillList()"></script>
+
+</body>
+</html>

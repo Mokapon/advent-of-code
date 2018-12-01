@@ -1,0 +1,18 @@
+{
+    "year": 2018,
+    "day": 1,
+    "title": "Chronal Calibration",
+    "instructions": {
+        "Instructions": [
+            "Change the input with the buttons in the top right."
+        ],
+        "Algorithm": [
+            "Go through the list, adding each value from the input.",
+            "For part 2, if the end is reached and no repeat frequency has been found, loop from the start.",
+            "Go through the whole list each of the following iterations to make the result come quicker."
+        ]
+    },
+    "tags": ["data-analysis", "numbers"],
+    "solved": [1,2],
+    "visuals": 0
+}
