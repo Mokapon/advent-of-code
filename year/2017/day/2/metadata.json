@@ -1,0 +1,16 @@
+{
+    "year": 2017,
+    "day": 2,
+    "title": "Corruption Checksum",
+    "instructions": {
+        "Instructions": [
+            "Change the input with the buttons in the top right."
+        ],
+        "Algorithm": [
+            "Each iteration compute everything needed for another row of the file."
+        ]
+    },
+    "tags": ["data-analysis", "strings", "lists"],
+    "solved": [1,2],
+    "visuals": 0
+}

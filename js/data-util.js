@@ -7,3 +7,7 @@ function initGrid(cols, rows, fillFunction) {
         }
     }
 }
+
+function compareValues(a, b) {
+    return a - b;
+}
