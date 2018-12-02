@@ -1,0 +1,17 @@
+{
+    "year": 2018,
+    "day": 2,
+    "title": "Inventory Management System",
+    "instructions": {
+        "Instructions": [
+            "Change the input with the buttons in the top right."
+        ],
+        "Algorithm": [
+            "<strong>Part 1:</strong> Go through each id, counting the number of occurrences of each letter.",
+            "<strong>Part 2:</strong> Go through each pair of ids, looking at their differences. As soon as we find 2 or more differences, move to the next."
+        ]
+    },
+    "tags": ["data-analysis","strings","checksum","comparisons"],
+    "solved": [1,2],
+    "visuals": 0
+}
