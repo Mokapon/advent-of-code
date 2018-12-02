@@ -17,6 +17,7 @@
   <script src="../../../../static/p5/p5.sound.min.js" type="text/javascript"></script>
 
   <!-- util functions -->
+  <script src="../../../../js/aoc-base.js" type="text/javascript"></script>
   <script src="../../../../js/display-util.js" type="text/javascript"></script>
   <script src="../../../../js/data-util.js" type="text/javascript"></script>
 
@@ -37,17 +38,20 @@
         </h3>
       </div>
       <div class="row">
-        <h2 class="col-8" id = "puzzle-title"></h2>
-        <div class="col-4">
+        <h2 class="col-7" id = "puzzle-title"></h2>
+        <div class="col-5">
           <div class="btn-group-toggle btn-group" data-toggle="buttons">
             <label class="btn btn-outline-primary active">
-              <input type="radio" name="options" id="example" autocomplete="off" checked onchange="loadPuzzle(0)">Example
+              <input type="radio" name="options" id="example1" autocomplete="off" checked onchange="loadPuzzle(0)">Example 1
             </label>
             <label class="btn btn-outline-primary">
-              <input type="radio" name="options" id="part1" autocomplete="off" onchange="loadPuzzle(1)">Part 1
+              <input type="radio" name="options" id="example2" autocomplete="off" onchange="loadPuzzle(1)">Example 2
             </label>
             <label class="btn btn-outline-primary">
-              <input type="radio" name="options" id="part2" autocomplete="off" onchange="loadPuzzle(2)">Part 2
+              <input type="radio" name="options" id="part1" autocomplete="off" onchange="loadPuzzle(2)">Part 1
+            </label>
+            <label class="btn btn-outline-primary">
+              <input type="radio" name="options" id="part2" autocomplete="off" onchange="loadPuzzle(3)">Part 2
             </label>
           </div>
         </div>

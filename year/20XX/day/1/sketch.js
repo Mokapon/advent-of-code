@@ -1,39 +1,23 @@
-const EXAMPLE = 0;
-const PART1 = 1;
-const PART2 = 2;
 
-let inputs = [];
-let currentPuzzle;
-let finished = false;
-
-function preload() {
-    inputs[EXAMPLE] = loadStrings('input/example.txt');
-    inputs[PART1] = loadStrings('input/part1.txt');
-    inputs[PART2] = loadStrings('input/part2.txt');
-}
-
-function setup() {
+function initDisplay() {
     createCanvas(500, 200).parent('sketch');
-
-    loadPuzzle(EXAMPLE);
+    // Initialize display elements that don't change (textAlign, colors, etc.)
+    textAlign(CENTER, CENTER);
 }
 
-function draw() {
+function updateDisplay() {
     background(240);
 
-    if (finished) {
-        noLoop();
-    } else {
-        // Update the state here
-    }
+    // Draw what you need here. Called each frame before updatePuzzle()
+    text("SOLVE ME PLEASE", width/2, height/2);
 }
 
-function loadPuzzle(puzzle) {
-    currentPuzzle = puzzle;
-    // Load the puzzle here
+function updatePuzzle() {
+    // Update the puzzle state. Called each frame after updateDisplay()
+    // Call isPart1() or isPart2() to know if you're solving the 1st part or 2nd part of the puzzle and examples
+    // Call puzzleSolved() when the puzzle answer has been found and/or to stop the updates
+}
 
-    if (finished) {
-        finished = false;
-        loop();
-    }
+function initPuzzle(input) {
+    // Initialize what you need to solve the puzzle here
 }

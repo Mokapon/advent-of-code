@@ -1,6 +1,6 @@
 {
     "year": 2000,
-    "day": 1,
+    "day": 0,
     "title": "Introduction",
     "instructions": {
         "Instructions": [
@@ -13,8 +13,8 @@
             "You can add any new section you want in the instructions attribute in metadata.json."
         ]
     },
-    "tags": [""],
+    "tags": [],
     "solved": [1,2],
     "visuals": 1,
-    "note": "Short note on the solution goes here"
+    "note": "Short note to display on the puzzles list goes here."
 }
