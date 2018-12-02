@@ -2,22 +2,28 @@ const EXAMPLE_P1 = 0;
 const EXAMPLE_P2 = 1;
 const PART1 = 2;
 const PART2 = 3;
+const INPUT_FILES = [];
+INPUT_FILES[EXAMPLE_P1] = 'input/example1.txt';
+INPUT_FILES[EXAMPLE_P2] = 'input/example2.txt';
+INPUT_FILES[PART1] = 'input/part1.txt';
+INPUT_FILES[PART2] = 'input/part2.txt';
 
 const inputs = [];
 let currentPuzzle;
 let finished = false;
 
+let toLoad = [EXAMPLE_P1, EXAMPLE_P2, PART1, PART2];
+
 function preload() {
-    inputs[EXAMPLE_P1] = loadStrings('input/example1.txt');
-    inputs[EXAMPLE_P2] = loadStrings('input/example2.txt');
-    inputs[PART1] = loadStrings('input/part1.txt');
-    inputs[PART2] = loadStrings('input/part2.txt');
+    for (let element of toLoad) {
+        inputs[element] = loadStrings(INPUT_FILES[element]);
+    }
 }
 
 function setup() {
     initDisplay();
 
-    loadPuzzle(EXAMPLE_P1);
+    loadPuzzle(toLoad[0]);
 }
 
 function draw() {
