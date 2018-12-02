@@ -7,12 +7,14 @@ function ListPrinter(startingPosition, totalSize, elementSize, listLength, displ
     this.elementsOffset = elementsOffset || floor(this.maxDisplayedElements * 2 / 3);
     this.displayFunction = displayFunction;
 
-    this.printList = function(focusIndex) {
+    this.printList = function(focusIndex, displayFunction) {
         let position = this.startingPosition;
         let startIndex = max(0, min(focusIndex - this.maxDisplayedElements + this.elementsOffset, this.baseStartIndex));
-
+        if (!displayFunction) {
+            displayFunction = this.displayFunction;
+        }
         for (let i = 0; i < this.displayedElements; i++) {
-            this.displayFunction(startIndex + i, position);
+            displayFunction(startIndex + i, position);
             position += this.elementSize;
         }
     }
@@ -66,7 +68,6 @@ function TextBlockPrinter(startingX, startingY, blockWidth, lineHeight, input) {
 
     } 
 }
-
 
 function initLines(text, blockWidth) {
     let lines = [];

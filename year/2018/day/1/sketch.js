@@ -86,13 +86,13 @@ function addNextValue() {
     }
 }
 
-function displayNumber(index, position) {
+function displayNumber(index, y) {
     if (index < currentIndex) {
         textStyle(BOLD);
     } else {
         textStyle(NORMAL);
     }
-    text(values[index], width/2, position);
+    text(values[index], width/2, y);
 }
 
 function loadPuzzle(puzzle) {
