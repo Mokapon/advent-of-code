@@ -25,8 +25,8 @@ function setup() {
     let canvas = createCanvas(COLS, ROWS);
     canvas.parent('sketch');
 
-    lightOnColor = color('#00cc00')
-    lightOffColor = color('#0f0f23')
+    lightOnColor = color('#00cc00');
+    lightOffColor = color('#0f0f23');
 
     pixelDensity(1);
 

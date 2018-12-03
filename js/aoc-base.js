@@ -1,3 +1,9 @@
+// Constants
+let AOC_BACKGROUND_COLOR;
+let AOC_ACCENT_COLOR;
+
+
+// Handle the page behavior
 const EXAMPLE_P1 = 0;
 const EXAMPLE_P2 = 1;
 const PART1 = 2;
@@ -21,6 +27,9 @@ function preload() {
 }
 
 function setup() {
+    AOC_BACKGROUND_COLOR = color('#0f0f23');
+    AOC_ACCENT_COLOR = color('#00cc00');
+
     initDisplay();
 
     loadPuzzle(toLoad[0]);

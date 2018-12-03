@@ -1,0 +1,22 @@
+{
+    "year": 2018,
+    "day": 3,
+    "title": "No Matter How You Slice It",
+    "instructions": {
+        "Instructions": [
+            "Change the input with the buttons in the top right.",
+            "The puzzle answers are printed in the console."
+        ],
+        "Algorithm": [
+            "<em>Part 1</em>: Each frame, display another claim. At the end count the locations with more than a given brightness.",
+            "<em>Part 2</em>: Each frame, check if the current claim has any overlapping part with any other claim."
+        ],
+        "Display": [
+            "Because the fabric measurements are 1000x1000, Work directly on the pixels array.",
+            "For smaller fabrics, the display is scaled automatically to fill the space available."
+        ]
+    },
+    "tags": [ "data-analysis", "rectangles", "collisions", "pixels" ],
+    "solved": [1,2],
+    "visuals": 1
+}
