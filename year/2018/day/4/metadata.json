@@ -1,0 +1,17 @@
+{
+    "year": 2018,
+    "day": 4,
+    "title": "Introduction",
+    "instructions": {
+        "Instructions": [
+            "Change the input with the buttons in the top right."
+        ],
+        "Algorithm": [
+            "When loading, create a list of all days and guards.",
+            "Then, each frame analyze and store the guard's \"activity\" from this day. Keep track of the stats as we go."
+        ]
+    },
+    "tags": ["data-analysis","ordering","grouping","strings"],
+    "solved": [1,2],
+    "visuals": 1
+}
