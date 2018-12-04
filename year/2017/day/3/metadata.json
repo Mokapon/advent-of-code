@@ -1,0 +1,23 @@
+{
+    "year": 2017,
+    "day": 3,
+    "title": "Spiral Memory",
+    "instructions": {
+        "Instructions": [
+            "Change the input with the buttons in the top right.",
+            "The answers are written in the console."
+        ],
+        "Algorithm": [
+            "<em>Part 1:</em> Method 1 computes algorithmcally the expected value.",
+            "<em>Part 1:</em> Method 2 fills up the grid one value at a time and computes the distance from the target cell to the center from their x/y poistion in the grid.",
+            "<em>Part 1:</em> Both method rely on building a grid with an odd number of rows and columns, so that the target value is on the outer ring of the grid.", 
+            "<em>Part 2:</em> Fill out the grid one value per iteration until a correct value is reached."
+        ],
+        "Display": [
+            "Draw a grid of the proper size only once. At each following tick, just print the new value."
+        ]
+    },
+    "tags": [ "data-manipulation", "grids" ],
+    "solved": [1,2],
+    "visuals": 1
+}
