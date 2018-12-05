@@ -20,23 +20,44 @@ function ListPrinter(startingPosition, totalSize, elementSize, listLength, displ
     }
 }
 
-function TextBlockPrinter(startingX, startingY, blockWidth, lineHeight, input) {
+function TextBlockPrinter(startingX, startingY, blockWidth, lineHeight, textToPrint) {
     this.startingX = startingX;
     this.startingY = startingY;
     this.endingY;
     this.blockWidth = blockWidth;
     this.lineHeight = lineHeight;
-    this.textLength = input.length;
-    this.lines = initLines(input, blockWidth);
-    this.lineLength = this.lines[0].length;
+    this.textLength;
+    this.lines;
+    this.lineLength;
 
+    this.setText = function (textToPrint) {
+        if (!textToPrint) {
+            return;
+        }
+        this.textLength = textToPrint.length;
+        this.lines = [];
+
+        let lineLength = textToPrint.length;
+        let numLines = 1;
+        let inputWidth = textWidth(textToPrint);
+        if (inputWidth > blockWidth) {
+            numLines = ceil(inputWidth / blockWidth);
+            lineLength = ceil(textToPrint.length / numLines);
+        }
+
+        for (let i = 0; i < numLines; i++) {
+            this.lines.push(textToPrint.substring(i*lineLength, (i+1)*lineLength));
+        }
+        this.lineLength = lineLength;
+
+    }
     this.printBlock = function() {
         push();
         textAlign(CENTER);
         let y = this.startingY;
         for (let line of this.lines) {
-            text(line, startingX + blockWidth/2, y);
-            y +=  lineHeight;
+            text(line, this.startingX + this.blockWidth/2, y);
+            y += this.lineHeight;
         }
         this.endingY = y;
         pop();
@@ -65,23 +86,7 @@ function TextBlockPrinter(startingX, startingY, blockWidth, lineHeight, input) {
         text(char, x, y);
         
         pop();
-
-    } 
-}
-
-function initLines(text, blockWidth) {
-    let lines = [];
-
-    let lineLength = text.length;
-    let numLines = 1;
-    let inputWidth = textWidth(text);
-    if (inputWidth > blockWidth) {
-        numLines = ceil(inputWidth / blockWidth);
-        lineLength = ceil(input.length / numLines);
     }
 
-    for (let i = 0; i < numLines; i++) {
-        lines.push(input.substring(i*lineLength, (i+1)*lineLength));
-    }
-    return lines;
+    this.setText(textToPrint);
 }
