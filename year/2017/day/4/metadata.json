@@ -1,20 +1,17 @@
 {
     "year": 2017,
-    "day": 0,
-    "title": "Introduction",
+    "day": 4,
+    "title": "High-Entropy Passphrases",
     "instructions": {
         "Instructions": [
             "Change the input with the buttons in the top right."
         ],
         "Algorithm": [
-            "This is an example page. Change this text in the <em>metadata.json</em> file."
-        ],
-        "Display": [
-            "You can add any new section you want in the instructions attribute in metadata.json."
+            "Check a new passphrase validity each iteration.",
+            "For part 2, order the letters in the words alphabetically so that anagrams will be the same words."
         ]
     },
-    "tags": [],
+    "tags": ["data-analysis", "strings"],
     "solved": [1,2],
-    "visuals": 1,
-    "note": "Short note to display on the puzzles list goes here."
+    "visuals": 0
 }
