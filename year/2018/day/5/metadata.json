@@ -1,0 +1,17 @@
+{
+    "year": 2018,
+    "day": 5,
+    "title": "Alchemical Reduction",
+    "instructions": {
+        "Instructions": [
+            "Change the input with the buttons in the top right."
+        ],
+        "Algorithm": [
+            "Each frame, check a new unit and remove if necessary (or more, ensuring that the total execution length is < 1 minute).",
+            "For part 2, remove one letter from the input at a time and do the same as above, tracking the shortest lenght obtained."
+        ]
+    },
+    "tags": ["data-manipulation", "strings"],
+    "solved": [1,2],
+    "visuals": 0
+}
