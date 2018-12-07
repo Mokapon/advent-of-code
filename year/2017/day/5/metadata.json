@@ -1,0 +1,17 @@
+{
+    "year": 2017,
+    "day": 5,
+    "title": "A Maze of Twisty Trampolines, All Alike",
+    "instructions": {
+        "Instructions": [
+            "Change the input with the buttons in the top right.",
+            "The result is printed in the console."
+        ],
+        "Algorithm": [
+            "Apply an instruction each frame for the exemples, 10k for the actual puzzles."
+        ]
+    },
+    "tags": ["instructions"],
+    "solved": [1,2],
+    "visuals": 1
+}
