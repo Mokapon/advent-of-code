@@ -1,7 +1,7 @@
-function ListPrinter(startingPosition, totalSize, elementSize, listLength, displayFunction, elementsOffset) {
+function ListPrinter(startingPosition, availableSize, elementSize, listLength, displayFunction, elementsOffset) {
     this.startingPosition = startingPosition;
     this.elementSize = elementSize;
-    this.maxDisplayedElements = floor(totalSize / elementSize);
+    this.maxDisplayedElements = floor(availableSize / elementSize);
     this.displayedElements = min(listLength, this.maxDisplayedElements);
     this.baseStartIndex = listLength - this.maxDisplayedElements;
     this.elementsOffset = elementsOffset || floor(this.maxDisplayedElements * 2 / 3);
@@ -18,6 +18,47 @@ function ListPrinter(startingPosition, totalSize, elementSize, listLength, displ
             position += this.elementSize;
         }
     }
+}
+
+/*
+ * fills row by row first
+ */
+function ListAsGridPrinter(startingPosition, availableSize, elementSize, listLength, displayFunction, columnsOffset) {
+    this.startingPosition = startingPosition;
+    this.elementSize = elementSize;
+    this.listLength = listLength;
+    this.maxColumns = floor(availableSize.x / elementSize.x);
+    this.maxRows = floor(availableSize.y / elementSize.y);
+    this.maxDisplayedElements = this.maxColumns * this.maxRows;
+    this.displayedElements = min(listLength, this.maxDisplayedElements);
+    this.displayedRows = min(listLength, this.maxRows);
+    this.baseStartColumn = ceil(listLength/this.maxRows) - this.maxColumns;
+    this.displayedColumns =  min(ceil(listLength/this.maxRows), this.maxColumns);
+    this.displayedElements = min(listLength, this.maxDisplayedElements);
+
+    this.columnsOffset = columnsOffset || floor(this.maxColumns * 2 / 3);
+    this.displayFunction = displayFunction;
+
+    this.printList = function(focusIndex, displayFunction) {
+        let position = createVector(this.startingPosition.x, this.startingPosition.y);
+        let startColumn = max(0, min(ceil(focusIndex/this.maxRows) - this.maxColumns + this.columnsOffset, this.baseStartColumn));
+        let index = startColumn * this.maxRows;
+        if (!displayFunction) {
+            displayFunction = this.displayFunction;
+        }
+        for (let column = 0; column < this.displayedColumns; column++) {
+            position.y = this.startingPosition.y;
+            for (let row = 0; row < this.displayedRows; row++) {
+                displayFunction(index, position.x, position.y);
+                position.y += this.elementSize.y;
+                if (++index >= this.listLength) {
+                    return;
+                }
+            }
+            position.x += this.elementSize.x;
+        }
+    }
+
 }
 
 function TextBlockPrinter(startingX, startingY, blockWidth, lineHeight, textToPrint) {
