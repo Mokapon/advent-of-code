@@ -1,0 +1,25 @@
+{
+    "year": 2018,
+    "day": 6,
+    "title": "Chronal Coordinates",
+    "instructions": {
+        "Instructions": [
+            "Change the input with the buttons in the top right.",
+            "The answer is printed in the console"
+        ],
+        "Algorithm": [
+            "To make it visually interesting, we don't use the algorithm described in the puzzle.",
+            "Each frame, we expand the area around the coordinates by 1, keeping track of the distance to the original position.",
+            "<em>For part 1</em>, each cell part of the expansion ring of one or more coordinate is closest to it, so this information is registered. The iteration ends when no ring can reach a neighbor that doesn't have a closest coordinate yet.",
+            "<em>For part 2</em>, each cell located on the expansion ring og a coordinate adds the distance to this coordinate to its total. Iterations stop when all cells have been counted for each coordinate of the input."
+        ],
+        "Display": [
+            "We use the pixels array to reduce the time needed to update the view.",
+            "<em>For part 1</em>, the area closest to each coordinate is associated a unique color. Gray cells are the one equidistant to several coordinates.",
+            "<em>For part 2</em>, each cell for which the total distance is currently under the threshold is colored. The transparency is based on the number of coordinates for which we have taken the distance in account (invisible: we don't know the distance to any of the coordinates yet. Solid: we know the actual total distance between the cell and each one of the coordinates.)"
+        ]
+    },
+    "tags": ["grid", "coordinates", "distance", "pixels"],
+    "solved": [1,2],
+    "visuals": 1
+}
