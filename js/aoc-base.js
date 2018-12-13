@@ -59,6 +59,10 @@ function loadPuzzle(puzzle) {
  * --- UTIL FUNCTIONS ---
  */
 
+function isExample() {
+    return currentPuzzle < PART1;
+}
+
 function isPart1() {
     return currentPuzzle%2 === EXAMPLE_P1;
 }
