@@ -7,6 +7,11 @@ function ListPrinter(startingPosition, availableSize, elementSize, listLength, d
     this.elementsOffset = elementsOffset || floor(this.maxDisplayedElements * 2 / 3);
     this.displayFunction = displayFunction;
 
+    this.setListLength = function(listLength) {
+        this.displayedElements = min(listLength, this.maxDisplayedElements);
+        this.baseStartIndex = listLength - this.maxDisplayedElements;
+    }
+    
     this.printList = function(focusIndex, displayFunction) {
         let position = this.startingPosition;
         let startIndex = max(0, min(focusIndex - this.maxDisplayedElements + this.elementsOffset, this.baseStartIndex));
