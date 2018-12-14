@@ -1,0 +1,21 @@
+{
+    "year": 2018,
+    "day": 8,
+    "title": "Memory Maneuver",
+    "instructions": {
+        "Instructions": [
+            "Change the input with the buttons in the top right."
+        ],
+        "Algorithm": [
+            "Build up the tree at startup. The expected value, is then computed in a classical recursive way, each node calling the getValues() of its chimdren before computing its own.",
+            "However, only one new value is computed each way, so the recursion is slightly altered to stop once a new value has been set.",
+            "Part 2 is faster than part 1 because we don't need to know the value of each node, but only the ones that are required by their parent."
+        ],
+        "Display" : [
+            "Each node is displayed with its value in parentheses (if it has been computed)."
+        ]
+    },
+    "tags": ["tree", "data-analysis"],
+    "solved": [1,2],
+    "visuals": 1
+}
