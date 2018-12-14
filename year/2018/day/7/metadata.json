@@ -1,0 +1,18 @@
+{
+    "year": 2018,
+    "day": 7,
+    "title": "The Sum of Its Parts",
+    "instructions": {
+        "Instructions": [
+            "Change the input with the buttons in the top right."
+        ],
+        "Algorithm": [
+            "Store the elements in a graphe structure similar to a trees, but with potentialy several roots and several parents for a single node.",
+            "Nodes of the tree are tasks. They keep references to their children as well as their parents.",
+            "Each frame, compute what tasks are being accomplished in a second. When a task is finished, look to see if their children can be started."
+        ]
+    },
+    "tags": ["data-manipulation"],
+    "solved": [1,2],
+    "visuals": 0
+}
