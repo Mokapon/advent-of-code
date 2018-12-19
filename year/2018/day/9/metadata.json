@@ -1,0 +1,17 @@
+{
+    "year": 2018,
+    "day": 9,
+    "title": "Marble Mania",
+    "instructions": {
+        "Instructions": [
+            "Change the input with the buttons in the top right."
+        ],
+        "Algorithm": [
+            "Use a custom linked list to store the marbles location in regards to one another.",
+            "Each frame, add (or remove if multople of 23) enough marbles to ensure the execution time is under 30 seconds."
+        ]
+    },
+    "tags": ["linked-list", "simumation"],
+    "solved": [1,2],
+    "visuals": 0
+}
