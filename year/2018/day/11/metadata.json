@@ -1,0 +1,22 @@
+{
+    "year": 2018,
+    "day": 11,
+    "title": "Chronal Charge",
+    "instructions": {
+        "Instructions": [
+            "Change the input with the buttons in the top right.",
+            "The result is displayed in the console."
+        ],
+        "Algorithm": [
+            "Compute the power level of each cell from the start",
+            "Each iteration, check the value of new zones."
+        ],
+        "Display": [
+            "Display the grid then save the pixels, each frame, redraw the pixels instead of rendering everything again."
+        ]
+    },
+    "tags": [ "grid", "data-analysis" ],
+    "solved": [1,2],
+    "visuals": 1,
+    "note": "Loading is a bit slow."
+}
