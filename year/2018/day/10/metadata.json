@@ -1,0 +1,17 @@
+{
+    "year": 2018,
+    "day": 10,
+    "title": "The Stars Align",
+    "instructions": {
+        "Instructions": [
+            "Change the input with the buttons in the top right."
+        ],
+        "Algorithm": [
+            "Update the position of the lights and check the area of the smallest rectangle containing the lights.",
+            "The area keeps getting smaller untill the word is shown. If it starts getting larger, stop the updates."
+        ]
+    },
+    "tags": [ "simulation", "vectors" ],
+    "solved": [1,2],
+    "visuals": 1
+}
