@@ -1,0 +1,23 @@
+{
+    "year": 2018,
+    "day": 12,
+    "title": "Subterranean Sustainability",
+    "instructions": {
+        "Instructions": [
+            "Change the input with the buttons in the top right.",
+            "The result is printed in the console."
+        ],
+        "Algorithm": [
+            "Compute a generation per frame, expanding the size of the list as needed, keeping track of the offset with pot 0.",
+            "When the first to pots are empty, remove one and update the offset accordingly.",
+            "Because of this, for higher generation counts it's easy to notive the point where the pattern doesn't change, except an offset.",
+            "When this happens, compute the offset of the final and use it to get the total value of that generation."
+        ],
+        "Display": [
+            "The offset for each generation is stored, so empty pots are added before and after what is stored so that everything is aligned properly."
+        ]
+    },
+    "tags": [ "simulation", "cellular-automata" ],
+    "solved": [1,2],
+    "visuals": 1
+}
